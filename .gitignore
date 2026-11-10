@@ -1,0 +1,13 @@
+# Local caches and generated reports
+.DS_Store
+node_modules/
+.hyperframes/
+.thumbnails/
+renders/
+*.log
+validation-output.json
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example

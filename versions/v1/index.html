@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en" data-composition-variables='[{"id": "brand", "type": "color", "label": "Brand accent", "default": "#0e8598"}, {"id": "headline", "type": "string", "label": "Opening headline", "default": "Paper. Meet PDF."}, {"id": "privacy", "type": "string", "label": "Privacy promise", "default": "Your documents. Your phone."}, {"id": "url", "type": "string", "label": "Website", "default": "loopscanner.app"}]'>
+<head><meta charset="utf-8"><title>Loop Scanner — 10 second product intro</title>
+<style>*{box-sizing:border-box}html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#f2f2f6}#root{position:relative;width:1920px;height:1080px;--brand:#0e8598} .scene{position:absolute;inset:0}</style>
+</head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="10" data-width="1920" data-height="1080" data-fps="30">
+<div id="paper" class="clip scene" data-composition-id="paper" data-composition-src="compositions/paper.html" data-start="0" data-duration="3.2" data-width="1920" data-height="1080" data-track-index="1" data-track-kind="graphics"></div>
+<div id="product" class="clip scene" data-composition-id="product" data-composition-src="compositions/product.html" data-start="3.2" data-duration="4.2" data-width="1920" data-height="1080" data-track-index="1" data-track-kind="graphics"></div>
+<div id="brand" class="clip scene" data-composition-id="brand" data-composition-src="compositions/brand.html" data-start="7.4" data-duration="2.6" data-width="1920" data-height="1080" data-track-index="1" data-track-kind="graphics"></div>
+</div>
+<script>window.__timelines=window.__timelines||{};if(window.gsap)window.__timelines.main=gsap.timeline({paused:true});</script>
+</body></html>

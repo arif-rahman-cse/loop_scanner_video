@@ -1,0 +1,22 @@
+<template>
+<style>@font-face{font-family:'Anek Latin';src:url('assets/fonts/anek-latin.woff2') format('woff2');font-weight:100 800} #root{position:absolute;inset:0;font-family:'Anek Latin',sans-serif;overflow:hidden}*{box-sizing:border-box}
+#root{background:#f2f2f6;color:#12181b}.copy{position:absolute;left:192px;top:240px;width:800px}.eyebrow{font-size:30px;font-weight:600;letter-spacing:5px;color:#076570;margin-bottom:28px}h1{font-size:132px;line-height:.96;letter-spacing:-5px;margin:0;width:700px;font-weight:700}.sub{font-size:36px;color:#4c595f;margin-top:38px}.paper-stage{position:absolute;left:1160px;top:128px;width:500px;height:750px;overflow:hidden;border-radius:12px;box-shadow:0 28px 64px #12181b20}.paper-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.clean{background:white}.clean img{object-fit:contain;padding:20px}.sweep{position:absolute;left:0;right:0;height:4px;background:var(--brand,#0e8598);box-shadow:0 0 25px #0e859888}.status{position:absolute;left:1160px;top:920px;font-size:32px;color:#076570;font-weight:600}
+</style>
+<div id="root" data-composition-id="paper" data-width="1920" data-height="1080">
+<div id="paper-copy" class="clip copy" data-start="0" data-duration="3.2" data-beat="hook"><div class="eyebrow">LOOP SCANNER</div><h1 data-var-text="headline">Paper.<br>Meet PDF.</h1><div class="sub">From everyday paper to clean files.</div></div>
+<div id="paper-visual" class="clip paper-stage" data-start="0" data-duration="3.2" data-layout-allow-overlap><img src="assets/invoice-photo.webp" alt="Original invoice photograph"><div id="paper-clean" class="clean" style="position:absolute;inset:0"><img src="assets/invoice-page.webp" alt="Clean scanned invoice"></div><div id="paper-sweep" class="sweep"></div></div>
+<div id="paper-status" class="clip status" data-start="1.3" data-duration="1.9" data-beat="result">Clean. Ready to save.</div>
+</div>
+<script>
+
+const paperAnims=[];
+function pa(id,keys,delay,duration){const a=document.getElementById(id).animate(keys,{duration:duration*1000,delay:delay*1000,fill:'both',easing:'cubic-bezier(.22,.7,.2,1)'});a.pause();paperAnims.push(a);}
+pa('paper-clean',[{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0% 0)'}],.7,1.15);
+pa('paper-sweep',[{transform:'translateY(0px)',opacity:0},{opacity:1,offset:.08},{transform:'translateY(748px)',opacity:1,offset:.95},{transform:'translateY(750px)',opacity:0}],.7,1.15);
+pa('paper-status',[{opacity:0},{opacity:1}],1.85,.25);
+pa('paper-copy',[{opacity:1},{opacity:0}],2.98,.22);
+pa('paper-visual',[{transform:'translateX(0px)'},{transform:'translateX(550px)'}],2.9,.3);
+
+if(window.gsap){window.__timelines=window.__timelines||{};window.__timelines["paper"]=gsap.timeline({paused:true});}
+</script>
+</template>

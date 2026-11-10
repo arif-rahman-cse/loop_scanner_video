@@ -1,0 +1,16 @@
+{
+  "name": "loop-scanner-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Editable 10-second Loop Scanner exhibition video",
+  "scripts": {
+    "preview": "hyperframes preview",
+    "check": "hyperframes check --json",
+    "review": "hyperframes snapshot --review",
+    "render": "hyperframes render --quality delivery -o loopscanner-exhibition.mp4",
+    "verify": "node tools/verify-loop.cjs"
+  },
+  "devDependencies": {
+    "hyperframes": "0.9.28"
+  }
+}

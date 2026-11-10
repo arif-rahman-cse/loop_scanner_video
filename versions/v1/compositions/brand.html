@@ -1,0 +1,20 @@
+<template>
+<style>@font-face{font-family:'Anek Latin';src:url('assets/fonts/anek-latin.woff2') format('woff2');font-weight:100 800} #root{position:absolute;inset:0;font-family:'Anek Latin',sans-serif;overflow:hidden}*{box-sizing:border-box}
+#root{background:#f2f2f6;color:#12181b}.lockup{position:absolute;left:0;right:0;top:304px;display:flex;justify-content:center;align-items:center;gap:36px}.lockup img{width:146px;height:146px;border-radius:32px}.wordmark{font-weight:700;font-size:94px;letter-spacing:-3px}.claim{position:absolute;left:0;right:0;text-align:center;top:510px;font-size:48px;font-weight:500}.url{position:absolute;top:670px;left:0;right:0;text-align:center;font-size:40px;font-weight:600;color:#076570}
+</style>
+<div id="root" data-composition-id="brand" data-width="1920" data-height="1080">
+<div id="brand-lockup" class="clip lockup" data-start="0" data-duration="2.6" data-beat="end-card"><img src="assets/icon.webp" alt="Official Loop Scanner icon"><div class="wordmark">Loop Scanner</div></div>
+<div id="brand-claim" class="clip claim" data-start="0" data-duration="2.6">Scan documents to PDF. Upload nothing.</div>
+<div id="brand-url" class="clip url" data-start="0" data-duration="2.6" data-var-text="url" data-hold>loopscanner.app</div>
+</div>
+<script>
+
+const brandAnims=[];
+function ba(id,keys,delay,duration){const a=document.getElementById(id).animate(keys,{duration:duration*1000,delay:delay*1000,fill:'both',easing:'cubic-bezier(.22,.7,.2,1)'});a.pause();brandAnims.push(a);}
+ba('brand-lockup',[{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0 0 0)'}],0,.4);
+ba('brand-claim',[{opacity:0},{opacity:1}],.12,.2);
+ba('brand-url',[{opacity:0},{opacity:1}],.22,.2);
+
+if(window.gsap){window.__timelines=window.__timelines||{};window.__timelines["brand"]=gsap.timeline({paused:true});}
+</script>
+</template>

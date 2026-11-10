@@ -1,0 +1,25 @@
+<template>
+<style>@font-face{font-family:'Anek Latin';src:url('assets/fonts/anek-latin.woff2') format('woff2');font-weight:100 800} #root{position:absolute;inset:0;font-family:'Anek Latin',sans-serif;overflow:hidden}*{box-sizing:border-box}
+#root{background:#151b1e;color:#ebf0f1}.copy{position:absolute;left:192px;top:230px;width:860px}.eyebrow{font-size:30px;letter-spacing:5px;color:#70cedb;font-weight:600}h2{font-size:104px;line-height:1;letter-spacing:-3px;margin:30px 0 38px;width:880px}.small{font-size:36px;color:#b4c0c5;width:700px;line-height:1.35}.proof{position:absolute;left:192px;top:748px;font-size:32px;color:#70cedb}.screen{position:absolute;left:1160px;top:90px;width:406px;height:900px;overflow:hidden;border:7px solid #354348;border-radius:38px;background:#0c1012}.screen img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.caption{position:absolute;top:950px;left:192px;color:#b4c0c5;font-size:28px}
+</style>
+<div id="root" data-composition-id="product" data-width="1920" data-height="1080">
+<div id="product-copy" class="clip copy" data-start="0" data-duration="4.2" data-beat="product"><div class="eyebrow">SCAN · REFINE · EXPORT</div><h2 data-var-text="privacy">Your documents.<br>Your phone.</h2><div class="small">ID cards, passports and papers.<br>Clean scans. Ready to share.</div></div>
+<div id="product-proof" class="clip proof" data-start=".6" data-duration="3.6">No account. No ads. No uploads.</div>
+<div id="product-screen" class="clip screen" data-start="0" data-duration="4.2" data-layout-allow-overlap><img id="product-refine" src="assets/id-filters.webp" alt="Real Loop Scanner review screen"><img id="product-export" src="assets/id-export.webp" alt="Real Loop Scanner PDF export screen"></div>
+<div id="product-caption" class="clip caption" data-start="0" data-duration="4.2">Made entirely on your device.</div>
+</div>
+<script>
+
+const productAnims=[];
+function qa(id,keys,delay,duration){const a=document.getElementById(id).animate(keys,{duration:duration*1000,delay:delay*1000,fill:productAnims.some(a=>a.effect.target.id===id)?'forwards':'both',easing:'cubic-bezier(.22,.7,.2,1)'});a.pause();productAnims.push(a);}
+qa('product-screen',[{transform:'translateX(480px)'},{transform:'translateX(0)'}],0,.48);
+qa('product-proof',[{opacity:0},{opacity:1}],.6,.25);
+qa('product-export',[{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0 0)'}],1.65,.45);
+qa('product-copy',[{opacity:1},{opacity:0}],3.95,.25);
+qa('product-proof',[{opacity:1},{opacity:0}],3.95,.25);
+qa('product-caption',[{opacity:1},{opacity:0}],3.95,.25);
+qa('product-screen',[{transform:'translateX(0)'},{transform:'translateX(480px)'}],3.85,.35);
+
+if(window.gsap){window.__timelines=window.__timelines||{};window.__timelines["product"]=gsap.timeline({paused:true});}
+</script>
+</template>
